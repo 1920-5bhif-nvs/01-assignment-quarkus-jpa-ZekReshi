@@ -13,3 +13,7 @@ By default the credentials are user:`postgres` password:`admin`.
 You can setup your own dockered postgres by executing `docker-compose up` in the project's root directory. Beware that the url might not be 192.168.99.100 if you are not using a docker with VirtualBox.
 
 If your database credentials do not match you can change them in the `application.properties` file.
+
+## Entities
+
+![](images/ERD.png =100x)
