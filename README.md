@@ -16,4 +16,6 @@ If your database credentials do not match you can change them in the `applicatio
 
 ## Entities
 
-![](images/ERD.png =100x)
+A coin in the collection was provided by a certain collector and can be found in a certain source container where other coins are also stored. In a collection there can be coins of different values and currencies, e.g. 10 Groschen or 500 Schilling.
+
+<img src="images/ERD.png" width="400" />
