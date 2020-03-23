@@ -6,6 +6,8 @@ import at.htl.coincollection.model.Source;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
@@ -16,9 +18,13 @@ public class SourceEndpoint {
     SourceFacade sourceFacade;
 
     @GET
+    @Produces(MediaType.APPLICATION_JSON)
     public Response getAll() {
         List<Source> sources = sourceFacade.getAll();
-        return Response.ok().entity(sources).build();
+        return Response
+                .ok()
+                .entity(sources)
+                .build();
     }
 
 }
