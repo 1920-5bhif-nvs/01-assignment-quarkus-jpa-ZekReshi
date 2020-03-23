@@ -6,6 +6,17 @@ import javax.persistence.*;
 @NamedQueries(
         @NamedQuery(name="Coin.getAll", query="select c from Coin c")
 )
+@NamedEntityGraph(
+        name = "coin-entity-graph",
+        attributeNodes = {
+                @NamedAttributeNode("value"),
+                @NamedAttributeNode("preservation"),
+                @NamedAttributeNode("yearOfCoinage"),
+                @NamedAttributeNode("source"),
+                @NamedAttributeNode("currency"),
+                @NamedAttributeNode("collector")
+        }
+)
 public class Coin {
 
     @Id

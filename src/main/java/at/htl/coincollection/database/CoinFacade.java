@@ -4,6 +4,8 @@ import at.htl.coincollection.model.Coin;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.persistence.EntityGraph;
+import java.util.HashMap;
 import java.util.List;
 
 @ApplicationScoped
@@ -21,7 +23,10 @@ public class CoinFacade extends Facade<Coin> {
     }
 
     public Coin getById(Long id) {
-        return em.find(Coin.class, id);
+        EntityGraph eg = em.getEntityGraph("coin-entity-graph");
+        HashMap<String, Object> properties = new HashMap<>();
+        properties.put("javax.persistence.fetchgraph", eg);
+        return em.find(Coin.class, id, properties);
     }
 
 }

@@ -6,6 +6,12 @@ import javax.persistence.*;
 @NamedQueries(
         @NamedQuery(name="Source.getAll", query="select s from Source s")
 )
+@NamedEntityGraph(
+        name = "source-entity-graph",
+        attributeNodes = {
+                @NamedAttributeNode("name")
+        }
+)
 public class Source {
 
     @Id

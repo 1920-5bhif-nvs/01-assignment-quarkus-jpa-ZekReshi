@@ -6,6 +6,13 @@ import javax.persistence.*;
 @NamedQueries(
         @NamedQuery(name="Collector.getAll", query="select c from Collector c")
 )
+@NamedEntityGraph(
+        name = "collector-entity-graph",
+        attributeNodes = {
+                @NamedAttributeNode("firstName"),
+                @NamedAttributeNode("lastName")
+        }
+)
 public class Collector {
 
     @Id
